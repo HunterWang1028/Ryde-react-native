@@ -4,6 +4,5 @@ module.exports = {
   rules: {
     "prettier/prettier": "error",
     "linebreak-style": "off",
-    quotes: ["error", "double"],
   },
 };
