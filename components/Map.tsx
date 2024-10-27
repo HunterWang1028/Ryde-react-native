@@ -12,6 +12,8 @@ import { ActivityIndicator, Text, View } from "react-native";
 import MapView, { Marker } from "react-native-maps";
 import MapViewDirections from "react-native-maps-directions";
 
+const directionsAPI = process.env.EXPO_PUBLIC_GOOGLE_API_KEY;
+
 const Map = () => {
   const { data: drivers, loading, error } = useFetch<Driver[]>("/(api)/driver");
   const {
@@ -124,7 +126,7 @@ const Map = () => {
               latitude: destinationLatitude,
               longitude: destinationLongitude,
             }}
-            apikey={process.env.EXPO_PUBLIC_GOOGLE_API_KEY}
+            apikey={directionsAPI!}
             strokeColor="#0286ff"
             strokeWidth={5}
           />
